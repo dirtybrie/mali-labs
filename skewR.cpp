@@ -29,7 +29,8 @@ the shellcode below with your own. Steps on how to do so are at the bottom.
  The only difference between his walkthrough and this script is instead of having to put 
  in a PID for argv[1] this script will open the calculator 
  find it's PID and inject your shellcode. It's the ol' calculator reverse TCP no-
- thing new but it is a neat tool and a great step torwards malware development.
+ thing new but it is a neat tool and a great step torwards a journey into 
+malware development.
 
 DONT BE A PIECE OF SH** AND USE THIS AS AMMUNITION TO HURT PEOPLE. I DO NOT
 ENCOURAGE ANY ILLEGAL ACTIVITY. GET PERMISSION OR JUST DO IT TO YOURSELF,
