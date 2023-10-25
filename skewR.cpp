@@ -14,14 +14,14 @@ First and Foremost This is a very basic Maldev Script. Don't get me wrong It has
 the potential to be a nasty payload, but right now it's shooting blanks (hence the 
 invalid shellcode bellow)
 
-skewR not flag your AV until it includes actual malicious shellcode. If you were to
+skewR will not flag your AV until it includes actual malicious shellcode. If you were to
 run it as is, it will not compromise your computer IN ANY WAY! This code is obviously
 not obfuscated so even when you run it with your msfvenom shcode it will set off any
 AV just heads up. You can find great methods right here on github for obfuscation.
 skewR opens calc.exe, seeks out its PID and injects shellcode to that process with rwx 
-permission since the shellcode below is invalid it will just crash Calculator. Not PERMINATELY either. 
-But that's how you know, FOR SURE the injection WORKS! Just swap the shellcode below 
-with your own. Steps on how to do so are at the bottom.
+permission since the shellcode below is invalid it will just crash Calculator. Not 
+PERMINATELY though. But that's how you know, FOR SURE the injection WORKS! Just swap 
+the shellcode below with your own. Steps on how to do so are at the bottom.
 
  CREDIT WHERE CREDIT'S DO:
  This script was put together after watching mr.Crow's Maldev II video on youtube
