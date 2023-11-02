@@ -61,13 +61,9 @@ int main() {
     // get the PID
     GetWindowThreadProcessId(hwnd, &PID);
 
-    // using null for arithmatic can be murky but it works and for this it's totally fine
-    // so dont worry about the warning g++ throws back at you.
-    if (PID == NULL){
-
-        // if PID is NULL return EXIT_FAILURE
-        return 1;
-    }
+    // if calc's PID isn't found then it will be 0
+    // If it is 0, return EXIT_FAILURE
+    if (PID == 0){ return 1; }
 
     // open a handle to the process
     hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, PID);
