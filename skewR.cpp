@@ -104,7 +104,7 @@ int main() {
     WaitForSingleObject(hThread, INFINITE);
 
     // This isn't really necessary, either way it's up to you though.
-    printf("cleaning up...\n", i);
+    printf("cleaning up...\n");
     CloseHandle(hThread);
     CloseHandle(hProcess);
 
